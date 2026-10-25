@@ -49,6 +49,8 @@ pnpm build
 pnpm test:e2e
 ```
 
+Если зависимости уже установлены, E2E также запускается через `npm run test:e2e`. Playwright сам запускает dev-сервер через `npm run dev`; установленный pnpm для этой проверки не требуется.
+
 E2E использует установленный Microsoft Edge и перехватывает сеть обезличенными fixtures, не отправляя сообщения реальным людям. Для CI установите Edge либо настройте Playwright на установленный Chromium. Unit/integration используют Vitest, Testing Library и MSW.
 
 Живой сценарий с реальным Telegram-получателем не выполнен. Доступность всех методов из production origin и фактическая доставка остаются отдельной проверкой; см. `docs/api-contract.md`.
